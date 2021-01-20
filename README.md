@@ -18,4 +18,10 @@ In order to use one of the supported HLS engines it is necessary to put the .xml
 	- CAPH
 	- VIVADO_HLS
 
-
+# Ready-to-use projects:
+## Toy
+Simple toy example to test MDC functionalities.
+To use it:
+- select protocols/protocol_CAPH.xml as protocol
+- slect libraries/Toy as hardware component library
+- 3 dataflows are present, but others can be easily derived with the available 3 actors
