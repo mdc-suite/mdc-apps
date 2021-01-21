@@ -11,15 +11,15 @@ In order to use one of the supported HLS engines it is necessary to put the .xml
 
 # Repo hierarchy:
 - libraries
-	- *CAPH* generic CAPH protocol library (no specific actor HDL)
-	- *Toy* complete library for the Toy project
-	- *VIVADO_HLS* generic Vivado HLS library (no specific actor HDL)
+	- **CAPH** generic CAPH protocol library (no specific actor HDL)
+	- **Toy** complete library for the Toy project
+	- **VIVADO_HLS** generic Vivado HLS library (no specific actor HDL)
 - projects
-	- *CNN* Inception-net for human/animal classification (no specific library)
-	- *Toy* simple toy applications with shifters and accumulators 
+	- **CNN** Inception-net for human/animal classification (no specific library)
+	- **Toy** simple toy applications with shifters and accumulators 
 - protocols
-	- *CAPH*
-	- *VIVADO_HLS*
+	- **CAPH**
+	- **VIVADO_HLS**
 
 # Ready-to-use projects:
 ## Toy
