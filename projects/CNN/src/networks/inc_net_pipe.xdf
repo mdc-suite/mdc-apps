@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<XDF name="inc_net_pipe">
+<?xml version="1.0" encoding="UTF-8"?><XDF name="inc_net_pipe">
     <Port kind="Input" name="in_port">
         <Type name="int">
             <Entry kind="Expr" name="size">
@@ -272,154 +271,280 @@
     <Instance id="line_buffer_0_0">
         <Class name="actors.line_buffer_0"/>
     </Instance>
+    <Instance id="line_buffer_21_0">
+        <Class name="actors.line_buffer_21"/>
+    </Instance>
+    <Instance id="weight_0_0">
+        <Class name="actors.weight_0"/>
+    </Instance>
+    <Instance id="bias_0_0">
+        <Class name="actors.bias_0"/>
+    </Instance>
+    <Instance id="bias_5_0">
+        <Class name="actors.bias_5"/>
+    </Instance>
+    <Instance id="bias_1_0">
+        <Class name="actors.bias_1"/>
+    </Instance>
+    <Instance id="bias_2_0">
+        <Class name="actors.bias_2"/>
+    </Instance>
+    <Instance id="bias_3_0">
+        <Class name="actors.bias_3"/>
+    </Instance>
+    <Instance id="bias_4_0">
+        <Class name="actors.bias_4"/>
+    </Instance>
+    <Instance id="bias_6_0">
+        <Class name="actors.bias_6"/>
+    </Instance>
+    <Instance id="weight_6_0">
+        <Class name="actors.weight_6"/>
+    </Instance>
+    <Instance id="weight_1_0">
+        <Class name="actors.weight_1"/>
+    </Instance>
+    <Instance id="weight_2_0">
+        <Class name="actors.weight_2"/>
+    </Instance>
+    <Instance id="weight_3_0">
+        <Class name="actors.weight_3"/>
+    </Instance>
+    <Instance id="weight_4_0">
+        <Class name="actors.weight_4"/>
+    </Instance>
+    <Instance id="weight_5_0">
+        <Class name="actors.weight_5"/>
+    </Instance>
+    <Instance id="weight_8_0">
+        <Class name="actors.weight_8"/>
+    </Instance>
+    <Instance id="bias_8_0">
+        <Class name="actors.bias_8"/>
+    </Instance>
+    <Instance id="weight_13_0">
+        <Class name="actors.weight_13"/>
+    </Instance>
+    <Instance id="bias_13_0">
+        <Class name="actors.bias_13"/>
+    </Instance>
+    <Instance id="weight_12_0">
+        <Class name="actors.weight_12"/>
+    </Instance>
+    <Instance id="bias_12_0">
+        <Class name="actors.bias_12"/>
+    </Instance>
+    <Instance id="weight_11_0">
+        <Class name="actors.weight_11"/>
+    </Instance>
+    <Instance id="bias_11_0">
+        <Class name="actors.bias_11"/>
+    </Instance>
+    <Instance id="weight_9_0">
+        <Class name="actors.weight_9"/>
+    </Instance>
+    <Instance id="bias_9_0">
+        <Class name="actors.bias_9"/>
+    </Instance>
+    <Instance id="weight_10_0">
+        <Class name="actors.weight_10"/>
+    </Instance>
+    <Instance id="bias_10_0">
+        <Class name="actors.bias_10"/>
+    </Instance>
+    <Instance id="weight_7_0">
+        <Class name="actors.weight_7"/>
+    </Instance>
+    <Instance id="bias_7_0">
+        <Class name="actors.bias_7"/>
+    </Instance>
+    <Instance id="bias_14_0">
+        <Class name="actors.bias_14"/>
+    </Instance>
+    <Instance id="weight_14_0">
+        <Class name="actors.weight_14"/>
+    </Instance>
+    <Instance id="bias_15_0">
+        <Class name="actors.bias_15"/>
+    </Instance>
+    <Instance id="weight_15_0">
+        <Class name="actors.weight_15"/>
+    </Instance>
+    <Instance id="bias_16_0">
+        <Class name="actors.bias_16"/>
+    </Instance>
+    <Instance id="weight_16_0">
+        <Class name="actors.weight_16"/>
+    </Instance>
+    <Instance id="bias_17_0">
+        <Class name="actors.bias_17"/>
+    </Instance>
+    <Instance id="weight_17_0">
+        <Class name="actors.weight_17"/>
+    </Instance>
+    <Instance id="bias_18_0">
+        <Class name="actors.bias_18"/>
+    </Instance>
+    <Instance id="weight_18_0">
+        <Class name="actors.weight_18"/>
+    </Instance>
+    <Instance id="bias_19_0">
+        <Class name="actors.bias_19"/>
+    </Instance>
+    <Instance id="weight_19_0">
+        <Class name="actors.weight_19"/>
+    </Instance>
+    <Instance id="bias_20_0">
+        <Class name="actors.bias_20"/>
+    </Instance>
+    <Instance id="weight_20_0">
+        <Class name="actors.weight_20"/>
+    </Instance>
+    <Instance id="bias_21_0">
+        <Class name="actors.bias_21"/>
+    </Instance>
+    <Instance id="weight_21_0">
+        <Class name="actors.weight_21"/>
+    </Instance>
     <Connection dst="gen_in_0" dst-port="input_V_V" src="" src-port="in_port"/>
-    <Connection dst="line_buffer_mp_0_0" dst-port="input_V_V"
-        src="gen_in_0" src-port="output_1_V_V"/>
-    <Connection dst="line_buffer_2_0" dst-port="input_V_V"
-        src="gen_in_0" src-port="output_2_V_V"/>
-    <Connection dst="line_buffer_4_0" dst-port="input_V_V"
-        src="gen_in_0" src-port="output_3_V_V"/>
+    <Connection dst="line_buffer_mp_0_0" dst-port="input_V_V" src="gen_in_0" src-port="output_1_V_V"/>
+    <Connection dst="line_buffer_2_0" dst-port="input_V_V" src="gen_in_0" src-port="output_2_V_V"/>
+    <Connection dst="line_buffer_4_0" dst-port="input_V_V" src="gen_in_0" src-port="output_3_V_V"/>
     <Connection dst="relu_2_0" dst-port="input_V_V" src="conv_2_0" src-port="output_V_V"/>
     <Connection dst="relu_4_0" dst-port="input_V_V" src="conv_4_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_5_0" dst-port="input_V_V"
-        src="relu_4_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_3_0" dst-port="input_V_V"
-        src="relu_2_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_5_0" dst-port="input_V_V" src="relu_4_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_3_0" dst-port="input_V_V" src="relu_2_0" src-port="output_V_V"/>
     <Connection dst="concat_0_0" dst-port="input_0_V_V" src="relu_0_0" src-port="output_V_V"/>
     <Connection dst="concat_0_0" dst-port="input_1_V_V" src="relu_1_0" src-port="output_V_V"/>
     <Connection dst="relu_3_0" dst-port="input_V_V" src="conv_3_0" src-port="output_V_V"/>
     <Connection dst="relu_5_0" dst-port="input_V_V" src="conv_5_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_6_0" dst-port="input_V_V"
-        src="relu_5_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_6_0" dst-port="input_V_V" src="relu_5_0" src-port="output_V_V"/>
     <Connection dst="concat_0_0" dst-port="input_2_V_V" src="relu_3_0" src-port="output_V_V"/>
     <Connection dst="relu_6_0" dst-port="input_V_V" src="conv_6_0" src-port="output_V_V"/>
     <Connection dst="concat_0_0" dst-port="input_3_V_V" src="relu_6_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_mp_1_0" dst-port="input_V_V"
-        src="concat_0_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_mp_1_0" dst-port="input_V_V" src="concat_0_0" src-port="output_V_V"/>
     <Connection dst="batch_0_0" dst-port="input_V_V" src="maxpool_1_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_7_0" dst-port="input_V_V"
-        src="batch_0_0" src-port="output_0_V_V"/>
-    <Connection dst="line_buffer_mp_2_0" dst-port="input_V_V"
-        src="batch_0_0" src-port="output_1_V_V"/>
-    <Connection dst="line_buffer_9_0" dst-port="input_V_V"
-        src="batch_0_0" src-port="output_2_V_V"/>
-    <Connection dst="line_buffer_11_0" dst-port="input_V_V"
-        src="batch_0_0" src-port="output_3_V_V"/>
+    <Connection dst="line_buffer_7_0" dst-port="input_V_V" src="batch_0_0" src-port="output_0_V_V"/>
+    <Connection dst="line_buffer_mp_2_0" dst-port="input_V_V" src="batch_0_0" src-port="output_1_V_V"/>
+    <Connection dst="line_buffer_9_0" dst-port="input_V_V" src="batch_0_0" src-port="output_2_V_V"/>
+    <Connection dst="line_buffer_11_0" dst-port="input_V_V" src="batch_0_0" src-port="output_3_V_V"/>
     <Connection dst="relu_9_0" dst-port="input_V_V" src="conv_9_0" src-port="output_V_V"/>
     <Connection dst="relu_11_0" dst-port="input_V_V" src="conv_11_0" src-port="output_V_V"/>
     <Connection dst="relu_7_0" dst-port="input_V_V" src="conv_7_0" src-port="output_V_V"/>
     <Connection dst="relu_8_0" dst-port="input_V_V" src="conv_8_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_8_0" dst-port="input_V_V"
-        src="maxpool_2_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_8_0" dst-port="input_V_V" src="maxpool_2_0" src-port="output_V_V"/>
     <Connection dst="concat_1_0" dst-port="input_0_V_V" src="relu_7_0" src-port="output_V_V"/>
     <Connection dst="concat_1_0" dst-port="input_1_V_V" src="relu_8_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_10_0" dst-port="input_V_V"
-        src="relu_9_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_12_0" dst-port="input_V_V"
-        src="relu_11_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_10_0" dst-port="input_V_V" src="relu_9_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_12_0" dst-port="input_V_V" src="relu_11_0" src-port="output_V_V"/>
     <Connection dst="relu_10" dst-port="input_V_V" src="conv_10_0" src-port="output_V_V"/>
     <Connection dst="relu_12_0" dst-port="input_V_V" src="conv_12_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_13_0" dst-port="input_V_V"
-        src="relu_12_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_13_0" dst-port="input_V_V" src="relu_12_0" src-port="output_V_V"/>
     <Connection dst="concat_1_0" dst-port="input_2_V_V" src="relu_10" src-port="output_V_V"/>
     <Connection dst="relu_13_0" dst-port="input_V_V" src="conv_13_0" src-port="output_V_V"/>
     <Connection dst="concat_1_0" dst-port="input_3_V_V" src="relu_13_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_mp_3_0" dst-port="input_V_V"
-        src="concat_1_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_mp_3_0" dst-port="input_V_V" src="concat_1_0" src-port="output_V_V"/>
     <Connection dst="batch_1_0" dst-port="input_V_V" src="maxpool_3_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_14_0" dst-port="input_V_V"
-        src="batch_1_0" src-port="output_0_V_V"/>
-    <Connection dst="line_buffer_mp_4_0" dst-port="input_V_V"
-        src="batch_1_0" src-port="output_1_V_V"/>
-    <Connection dst="line_buffer_16_0" dst-port="input_V_V"
-        src="batch_1_0" src-port="output_2_V_V"/>
-    <Connection dst="line_buffer_18_0" dst-port="input_V_V"
-        src="batch_1_0" src-port="output_3_V_V"/>
-    <Connection dst="line_buffer_15_0" dst-port="input_V_V"
-        src="maxpool_4_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_14_0" dst-port="input_V_V" src="batch_1_0" src-port="output_0_V_V"/>
+    <Connection dst="line_buffer_mp_4_0" dst-port="input_V_V" src="batch_1_0" src-port="output_1_V_V"/>
+    <Connection dst="line_buffer_16_0" dst-port="input_V_V" src="batch_1_0" src-port="output_2_V_V"/>
+    <Connection dst="line_buffer_18_0" dst-port="input_V_V" src="batch_1_0" src-port="output_3_V_V"/>
+    <Connection dst="line_buffer_15_0" dst-port="input_V_V" src="maxpool_4_0" src-port="output_V_V"/>
     <Connection dst="relu_14_0" dst-port="input_V_V" src="conv_14_0" src-port="output_V_V"/>
     <Connection dst="relu_15_0" dst-port="input_V_V" src="conv_15_0" src-port="output_V_V"/>
     <Connection dst="relu_18_0" dst-port="input_V_V" src="conv_18_0" src-port="output_V_V"/>
     <Connection dst="relu_16_0" dst-port="input_V_V" src="conv_16_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_17_0" dst-port="input_V_V"
-        src="relu_16_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_19_0" dst-port="input_V_V"
-        src="relu_18_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_17_0" dst-port="input_V_V" src="relu_16_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_19_0" dst-port="input_V_V" src="relu_18_0" src-port="output_V_V"/>
     <Connection dst="relu_17_0" dst-port="input_V_V" src="conv_17_0" src-port="output_V_V"/>
     <Connection dst="relu_19_0" dst-port="input_V_V" src="conv_19_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_20_0" dst-port="input_V_V"
-        src="relu_19_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_20_0" dst-port="input_V_V" src="relu_19_0" src-port="output_V_V"/>
     <Connection dst="relu_20_0" dst-port="input_V_V" src="conv_20_0" src-port="output_V_V"/>
     <Connection dst="concat_2_0" dst-port="input_3_V_V" src="relu_20_0" src-port="output_V_V"/>
     <Connection dst="concat_2_0" dst-port="input_2_V_V" src="relu_17_0" src-port="output_V_V"/>
     <Connection dst="concat_2_0" dst-port="input_1_V_V" src="relu_15_0" src-port="output_V_V"/>
     <Connection dst="concat_2_0" dst-port="input_0_V_V" src="relu_14_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_mp_5_0" dst-port="input_V_V"
-        src="concat_2_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_mp_5_0" dst-port="input_V_V" src="concat_2_0" src-port="output_V_V"/>
     <Connection dst="batch_2_0" dst-port="input_V_V" src="maxpool_5_0" src-port="output_V_V"/>
-    <Connection dst="conv_21_0" dst-port="input_V_V" src="batch_2_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_21_0" dst-port="input_V_V" src="batch_2_0" src-port="output_V_V"/>
     <Connection dst="relu_21_0" dst-port="input_V_V" src="conv_21_0" src-port="output_V_V"/>
     <Connection dst="batch_3_0" dst-port="input_V_V" src="relu_21_0" src-port="output_V_V"/>
     <Connection dst="gemm_0_0" dst-port="input_V_V" src="batch_3_0" src-port="output_V_V"/>
     <Connection dst="" dst-port="out_port" src="gemm_0_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_1_0" dst-port="input_V_V"
-        src="maxpool_0_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_1_0" dst-port="input_V_V" src="maxpool_0_0" src-port="output_V_V"/>
     <Connection dst="relu_1_0" dst-port="input_V_V" src="conv_1_0" src-port="output_V_V"/>
     <Connection dst="relu_0_0" dst-port="input_V_V" src="conv_0_0" src-port="output_V_V"/>
-    <Connection dst="maxpool_0_0" dst-port="input_V_V"
-        src="line_buffer_mp_0_0" src-port="output_V_V"/>
-    <Connection dst="conv_2_0" dst-port="input_V_V"
-        src="line_buffer_2_0" src-port="output_V_V"/>
-    <Connection dst="conv_4_0" dst-port="input_V_V"
-        src="line_buffer_4_0" src-port="output_V_V"/>
-    <Connection dst="conv_3_0" dst-port="input_V_V"
-        src="line_buffer_3_0" src-port="output_V_V"/>
-    <Connection dst="conv_5_0" dst-port="input_V_V"
-        src="line_buffer_5_0" src-port="output_V_V"/>
-    <Connection dst="conv_6_0" dst-port="input_V_V"
-        src="line_buffer_6_0" src-port="output_V_V"/>
-    <Connection dst="conv_1_0" dst-port="input_V_V"
-        src="line_buffer_1_0" src-port="output_V_V"/>
-    <Connection dst="maxpool_1_0" dst-port="input_V_V"
-        src="line_buffer_mp_1_0" src-port="output_V_V"/>
-    <Connection dst="conv_7_0" dst-port="input_V_V"
-        src="line_buffer_7_0" src-port="output_V_V"/>
-    <Connection dst="maxpool_2_0" dst-port="input_V_V"
-        src="line_buffer_mp_2_0" src-port="output_V_V"/>
-    <Connection dst="conv_8_0" dst-port="input_V_V"
-        src="line_buffer_8_0" src-port="output_V_V"/>
-    <Connection dst="conv_9_0" dst-port="input_V_V"
-        src="line_buffer_9_0" src-port="output_V_V"/>
-    <Connection dst="conv_10_0" dst-port="input_V_V"
-        src="line_buffer_10_0" src-port="output_V_V"/>
-    <Connection dst="conv_11_0" dst-port="input_V_V"
-        src="line_buffer_11_0" src-port="output_V_V"/>
-    <Connection dst="conv_12_0" dst-port="input_V_V"
-        src="line_buffer_12_0" src-port="output_V_V"/>
-    <Connection dst="conv_13_0" dst-port="input_V_V"
-        src="line_buffer_13_0" src-port="output_V_V"/>
-    <Connection dst="maxpool_3_0" dst-port="input_V_V"
-        src="line_buffer_mp_3_0" src-port="output_V_V"/>
-    <Connection dst="conv_14_0" dst-port="input_V_V"
-        src="line_buffer_14_0" src-port="output_V_V"/>
-    <Connection dst="maxpool_4_0" dst-port="input_V_V"
-        src="line_buffer_mp_4_0" src-port="output_V_V"/>
-    <Connection dst="conv_15_0" dst-port="input_V_V"
-        src="line_buffer_15_0" src-port="output_V_V"/>
-    <Connection dst="conv_16_0" dst-port="input_V_V"
-        src="line_buffer_16_0" src-port="output_V_V"/>
-    <Connection dst="conv_17_0" dst-port="input_V_V"
-        src="line_buffer_17_0" src-port="output_V_V"/>
-    <Connection dst="conv_18_0" dst-port="input_V_V"
-        src="line_buffer_18_0" src-port="output_V_V"/>
-    <Connection dst="conv_19_0" dst-port="input_V_V"
-        src="line_buffer_19_0" src-port="output_V_V"/>
-    <Connection dst="conv_20_0" dst-port="input_V_V"
-        src="line_buffer_20_0" src-port="output_V_V"/>
-    <Connection dst="maxpool_5_0" dst-port="input_V_V"
-        src="line_buffer_mp_5_0" src-port="output_V_V"/>
-    <Connection dst="line_buffer_0_0" dst-port="input_V_V"
-        src="gen_in_0" src-port="output_0_V_V"/>
-    <Connection dst="conv_0_0" dst-port="input_V_V"
-        src="line_buffer_0_0" src-port="output_V_V"/>
+    <Connection dst="maxpool_0_0" dst-port="input_V_V" src="line_buffer_mp_0_0" src-port="output_V_V"/>
+    <Connection dst="conv_2_0" dst-port="input_V_V" src="line_buffer_2_0" src-port="output_V_V"/>
+    <Connection dst="conv_4_0" dst-port="input_V_V" src="line_buffer_4_0" src-port="output_V_V"/>
+    <Connection dst="conv_3_0" dst-port="input_V_V" src="line_buffer_3_0" src-port="output_V_V"/>
+    <Connection dst="conv_5_0" dst-port="input_V_V" src="line_buffer_5_0" src-port="output_V_V"/>
+    <Connection dst="conv_6_0" dst-port="input_V_V" src="line_buffer_6_0" src-port="output_V_V"/>
+    <Connection dst="conv_1_0" dst-port="input_V_V" src="line_buffer_1_0" src-port="output_V_V"/>
+    <Connection dst="maxpool_1_0" dst-port="input_V_V" src="line_buffer_mp_1_0" src-port="output_V_V"/>
+    <Connection dst="conv_7_0" dst-port="input_V_V" src="line_buffer_7_0" src-port="output_V_V"/>
+    <Connection dst="maxpool_2_0" dst-port="input_V_V" src="line_buffer_mp_2_0" src-port="output_V_V"/>
+    <Connection dst="conv_8_0" dst-port="input_V_V" src="line_buffer_8_0" src-port="output_V_V"/>
+    <Connection dst="conv_9_0" dst-port="input_V_V" src="line_buffer_9_0" src-port="output_V_V"/>
+    <Connection dst="conv_10_0" dst-port="input_V_V" src="line_buffer_10_0" src-port="output_V_V"/>
+    <Connection dst="conv_11_0" dst-port="input_V_V" src="line_buffer_11_0" src-port="output_V_V"/>
+    <Connection dst="conv_12_0" dst-port="input_V_V" src="line_buffer_12_0" src-port="output_V_V"/>
+    <Connection dst="conv_13_0" dst-port="input_V_V" src="line_buffer_13_0" src-port="output_V_V"/>
+    <Connection dst="maxpool_3_0" dst-port="input_V_V" src="line_buffer_mp_3_0" src-port="output_V_V"/>
+    <Connection dst="conv_14_0" dst-port="input_V_V" src="line_buffer_14_0" src-port="output_V_V"/>
+    <Connection dst="maxpool_4_0" dst-port="input_V_V" src="line_buffer_mp_4_0" src-port="output_V_V"/>
+    <Connection dst="conv_15_0" dst-port="input_V_V" src="line_buffer_15_0" src-port="output_V_V"/>
+    <Connection dst="conv_16_0" dst-port="input_V_V" src="line_buffer_16_0" src-port="output_V_V"/>
+    <Connection dst="conv_17_0" dst-port="input_V_V" src="line_buffer_17_0" src-port="output_V_V"/>
+    <Connection dst="conv_18_0" dst-port="input_V_V" src="line_buffer_18_0" src-port="output_V_V"/>
+    <Connection dst="conv_19_0" dst-port="input_V_V" src="line_buffer_19_0" src-port="output_V_V"/>
+    <Connection dst="conv_20_0" dst-port="input_V_V" src="line_buffer_20_0" src-port="output_V_V"/>
+    <Connection dst="maxpool_5_0" dst-port="input_V_V" src="line_buffer_mp_5_0" src-port="output_V_V"/>
+    <Connection dst="line_buffer_0_0" dst-port="input_V_V" src="gen_in_0" src-port="output_0_V_V"/>
+    <Connection dst="conv_0_0" dst-port="input_V_V" src="line_buffer_0_0" src-port="output_V_V"/>
+    <Connection dst="conv_21_0" dst-port="input_V_V" src="line_buffer_21_0" src-port="output_V_V"/>
+    <Connection dst="conv_0_0" dst-port="weight_V_V" src="weight_0_0" src-port="output_V"/>
+    <Connection dst="conv_0_0" dst-port="bias_V_V" src="bias_0_0" src-port="output_V"/>
+    <Connection dst="conv_1_0" dst-port="weight_V_V" src="weight_1_0" src-port="output_V"/>
+    <Connection dst="conv_1_0" dst-port="bias_V_V" src="bias_1_0" src-port="output_V"/>
+    <Connection dst="conv_2_0" dst-port="weight_V_V" src="weight_2_0" src-port="output_V"/>
+    <Connection dst="conv_2_0" dst-port="bias_V_V" src="bias_2_0" src-port="output_V"/>
+    <Connection dst="conv_3_0" dst-port="weight_V_V" src="weight_3_0" src-port="output_V"/>
+    <Connection dst="conv_3_0" dst-port="bias_V_V" src="bias_3_0" src-port="output_V"/>
+    <Connection dst="conv_4_0" dst-port="weight_V_V" src="weight_4_0" src-port="output_V"/>
+    <Connection dst="conv_4_0" dst-port="bias_V_V" src="bias_4_0" src-port="output_V"/>
+    <Connection dst="conv_5_0" dst-port="weight_V_V" src="weight_5_0" src-port="output_V"/>
+    <Connection dst="conv_5_0" dst-port="bias_V_V" src="bias_5_0" src-port="output_V"/>
+    <Connection dst="conv_6_0" dst-port="weight_V_V" src="weight_6_0" src-port="output_V"/>
+    <Connection dst="conv_6_0" dst-port="bias_V_V" src="bias_6_0" src-port="output_V"/>
+    <Connection dst="conv_7_0" dst-port="weight_V_V" src="weight_7_0" src-port="output_V"/>
+    <Connection dst="conv_7_0" dst-port="bias_V_V" src="bias_7_0" src-port="output_V"/>
+    <Connection dst="conv_8_0" dst-port="weight_V_V" src="weight_8_0" src-port="output_V"/>
+    <Connection dst="conv_8_0" dst-port="bias_V_V" src="bias_8_0" src-port="output_V"/>
+    <Connection dst="conv_9_0" dst-port="weight_V_V" src="weight_9_0" src-port="output_V"/>
+    <Connection dst="conv_9_0" dst-port="bias_V_V" src="bias_9_0" src-port="output_V"/>
+    <Connection dst="conv_10_0" dst-port="weight_V_V" src="weight_10_0" src-port="output_V"/>
+    <Connection dst="conv_10_0" dst-port="bias_V_V" src="bias_10_0" src-port="output_V"/>
+    <Connection dst="conv_11_0" dst-port="weight_V_V" src="weight_11_0" src-port="output_V"/>
+    <Connection dst="conv_11_0" dst-port="bias_V_V" src="bias_11_0" src-port="output_V"/>
+    <Connection dst="conv_12_0" dst-port="weight_V_V" src="weight_12_0" src-port="output_V"/>
+    <Connection dst="conv_12_0" dst-port="bias_V_V" src="bias_12_0" src-port="output_V"/>
+    <Connection dst="conv_13_0" dst-port="weight_V_V" src="weight_13_0" src-port="output_V"/>
+    <Connection dst="conv_13_0" dst-port="bias_V_V" src="bias_13_0" src-port="output_V"/>
+    <Connection dst="conv_14_0" dst-port="weight_V_V" src="weight_14_0" src-port="output_V"/>
+    <Connection dst="conv_14_0" dst-port="bias_V_V" src="bias_14_0" src-port="output_V"/>
+    <Connection dst="conv_15_0" dst-port="weight_V_V" src="weight_15_0" src-port="output_V"/>
+    <Connection dst="conv_15_0" dst-port="bias_V_V" src="bias_15_0" src-port="output_V"/>
+    <Connection dst="conv_16_0" dst-port="weight_V_V" src="weight_16_0" src-port="output_V"/>
+    <Connection dst="conv_16_0" dst-port="bias_V_V" src="bias_16_0" src-port="output_V"/>
+    <Connection dst="conv_17_0" dst-port="weight_V_V" src="weight_17_0" src-port="output_V"/>
+    <Connection dst="conv_17_0" dst-port="bias_V_V" src="bias_17_0" src-port="output_V"/>
+    <Connection dst="conv_18_0" dst-port="weight_V_V" src="weight_18_0" src-port="output_V"/>
+    <Connection dst="conv_18_0" dst-port="bias_V_V" src="bias_18_0" src-port="output_V"/>
+    <Connection dst="conv_19_0" dst-port="weight_V_V" src="weight_19_0" src-port="output_V"/>
+    <Connection dst="conv_19_0" dst-port="bias_V_V" src="bias_19_0" src-port="output_V"/>
+    <Connection dst="conv_20_0" dst-port="weight_V_V" src="weight_20_0" src-port="output_V"/>
+    <Connection dst="conv_20_0" dst-port="bias_V_V" src="bias_20_0" src-port="output_V"/>
+    <Connection dst="conv_21_0" dst-port="weight_V_V" src="weight_21_0" src-port="output_V"/>
+    <Connection dst="conv_21_0" dst-port="bias_V_V" src="bias_21_0" src-port="output_V"/>
 </XDF>

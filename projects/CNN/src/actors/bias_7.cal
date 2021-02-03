@@ -1,0 +1,6 @@
+package actors;
+
+actor bias_7()
+  	==> 
+	int(size=16) output_V :
+end

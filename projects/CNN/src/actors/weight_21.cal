@@ -1,0 +1,6 @@
+package actors;
+
+actor weight_21()
+  	==> 
+	int(size=16) output_V :
+end
