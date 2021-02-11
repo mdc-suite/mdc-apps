@@ -2,5 +2,5 @@ package actors;
 
 actor weight_5()
   	==> 
-	int(size=16) output_V :
+	int(size=8) output_V :
 end

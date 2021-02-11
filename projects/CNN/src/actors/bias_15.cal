@@ -2,5 +2,5 @@ package actors;
 
 actor bias_15()
   	==> 
-	int(size=16) output_V :
+	int(size=8) output_V :
 end

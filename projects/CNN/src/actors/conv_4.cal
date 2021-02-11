@@ -2,8 +2,8 @@ package actors;
 
 actor conv_4()
   	int(size=16) input_V_V,
-  	int(size=16) weight_V_V,
-  	int(size=16) bias_V_V
+  	int(size=8) weight_V_V,
+  	int(size=8) bias_V_V
   	==> 
 	int(size=16) output_V_V :
 end

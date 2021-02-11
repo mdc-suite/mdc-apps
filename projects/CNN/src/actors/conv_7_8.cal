@@ -3,10 +3,10 @@ package actors;
 actor conv_7_8()
   	int(size=16) input_1_V_V,
   	int(size=16) input_2_V_V,
-	int(size=16) weight_1_V_V,
-	int(size=16) weight_2_V_V,
-	int(size=16) bias_1_V_V,
-	int(size=16) bias_2_V_V 
+	int(size=8) weight_1_V_V,
+	int(size=8) weight_2_V_V,
+	int(size=8) bias_1_V_V,
+	int(size=8) bias_2_V_V 
 	==> 
 	int(size=16) output_1_V_V,
 	int(size=16) output_2_V_V:
