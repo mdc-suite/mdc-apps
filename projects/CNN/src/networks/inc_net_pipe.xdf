@@ -257,7 +257,7 @@
         <Class name="actors.line_buffer_mp_1"/>
     </Instance>
     <Instance id="line_buffer_mp_2_0">
-        <Class name="actors.line_buffer_mp_1"/>
+        <Class name="actors.line_buffer_mp_2"/>
     </Instance>
     <Instance id="line_buffer_mp_3_0">
         <Class name="actors.line_buffer_mp_3"/>
