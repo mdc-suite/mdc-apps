@@ -7,11 +7,11 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="maxpool_4,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xczu9eg-ffvb1156-2-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.420000,HLS_SYN_LAT=960541,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=66,HLS_SYN_LUT=296}" *)
+(* CORE_GENERATION_INFO="maxpool_4,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.433000,HLS_SYN_LAT=960541,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=66,HLS_SYN_LUT=296}" *)
 
 module maxpool_4 (
         ap_clk,
-        ap_rst,
+        ap_rst_n,
         input_V_V_dout,
         input_V_V_empty_n,
         input_V_V_read,
@@ -28,7 +28,7 @@ parameter    ap_ST_fsm_state5 = 6'd16;
 parameter    ap_ST_fsm_state6 = 6'd32;
 
 input   ap_clk;
-input   ap_rst;
+input   ap_rst_n;
 input  [15:0] input_V_V_dout;
 input   input_V_V_empty_n;
 output   input_V_V_read;
@@ -39,6 +39,7 @@ output   output_V_V_write;
 reg input_V_V_read;
 reg output_V_V_write;
 
+reg    ap_rst_n_inv;
 reg    input_V_V_blk_n;
 (* fsm_encoding = "none" *) reg   [5:0] ap_CS_fsm;
 wire    ap_CS_fsm_state6;
@@ -83,7 +84,7 @@ initial begin
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
+    if (ap_rst_n_inv == 1'b1) begin
         ap_CS_fsm <= ap_ST_fsm_state1;
     end else begin
         ap_CS_fsm <= ap_NS_fsm;
@@ -93,7 +94,7 @@ end
 always @ (posedge ap_clk) begin
     if ((~((exitcond4_fu_221_p2 == 1'd1) & (output_V_V_full_n == 1'b0)) & (exitcond4_fu_221_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state5))) begin
         first_element_1_reg_168 <= first_element_reg_145;
-    end else if ((~((input_V_V_empty_n == 1'b0) & (exitcond_fu_233_p2 == 1'd0)) & (exitcond_fu_233_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
+    end else if ((~((exitcond_fu_233_p2 == 1'd0) & (input_V_V_empty_n == 1'b0)) & (exitcond_fu_233_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
         first_element_1_reg_168 <= 1'd0;
     end
 end
@@ -101,7 +102,7 @@ end
 always @ (posedge ap_clk) begin
     if (((exitcond3_fu_209_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
         first_element_reg_145 <= 1'd1;
-    end else if ((~((input_V_V_empty_n == 1'b0) & (exitcond_fu_233_p2 == 1'd0)) & (exitcond_fu_233_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state6))) begin
+    end else if ((~((exitcond_fu_233_p2 == 1'd0) & (input_V_V_empty_n == 1'b0)) & (exitcond_fu_233_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state6))) begin
         first_element_reg_145 <= first_element_1_reg_168;
     end
 end
@@ -109,7 +110,7 @@ end
 always @ (posedge ap_clk) begin
     if (((exitcond3_fu_209_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state4))) begin
         hkern_reg_134 <= 2'd0;
-    end else if ((~((input_V_V_empty_n == 1'b0) & (exitcond_fu_233_p2 == 1'd0)) & (exitcond_fu_233_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state6))) begin
+    end else if ((~((exitcond_fu_233_p2 == 1'd0) & (input_V_V_empty_n == 1'b0)) & (exitcond_fu_233_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state6))) begin
         hkern_reg_134 <= hkern_1_reg_305;
     end
 end
@@ -133,7 +134,7 @@ end
 always @ (posedge ap_clk) begin
     if ((~((exitcond4_fu_221_p2 == 1'd1) & (output_V_V_full_n == 1'b0)) & (exitcond4_fu_221_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state5))) begin
         wkern_reg_157 <= 2'd0;
-    end else if ((~((input_V_V_empty_n == 1'b0) & (exitcond_fu_233_p2 == 1'd0)) & (exitcond_fu_233_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
+    end else if ((~((exitcond_fu_233_p2 == 1'd0) & (input_V_V_empty_n == 1'b0)) & (exitcond_fu_233_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
         wkern_reg_157 <= wkern_1_fu_239_p2;
     end
 end
@@ -165,7 +166,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if ((~((input_V_V_empty_n == 1'b0) & (exitcond_fu_233_p2 == 1'd0)) & (exitcond_fu_233_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
+    if ((~((exitcond_fu_233_p2 == 1'd0) & (input_V_V_empty_n == 1'b0)) & (exitcond_fu_233_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
         tmp_V_fu_84 <= max_V_1_fu_259_p3;
     end
 end
@@ -185,7 +186,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((input_V_V_empty_n == 1'b0) & (exitcond_fu_233_p2 == 1'd0)) & (exitcond_fu_233_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
+    if ((~((exitcond_fu_233_p2 == 1'd0) & (input_V_V_empty_n == 1'b0)) & (exitcond_fu_233_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
         input_V_V_read = 1'b1;
     end else begin
         input_V_V_read = 1'b0;
@@ -244,9 +245,9 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state6 : begin
-            if ((~((input_V_V_empty_n == 1'b0) & (exitcond_fu_233_p2 == 1'd0)) & (exitcond_fu_233_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state6))) begin
+            if ((~((exitcond_fu_233_p2 == 1'd0) & (input_V_V_empty_n == 1'b0)) & (exitcond_fu_233_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state6))) begin
                 ap_NS_fsm = ap_ST_fsm_state5;
-            end else if ((~((input_V_V_empty_n == 1'b0) & (exitcond_fu_233_p2 == 1'd0)) & (exitcond_fu_233_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
+            end else if ((~((exitcond_fu_233_p2 == 1'd0) & (input_V_V_empty_n == 1'b0)) & (exitcond_fu_233_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state6))) begin
                 ap_NS_fsm = ap_ST_fsm_state6;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state6;
@@ -275,7 +276,11 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    ap_block_state6 = ((input_V_V_empty_n == 1'b0) & (exitcond_fu_233_p2 == 1'd0));
+    ap_block_state6 = ((exitcond_fu_233_p2 == 1'd0) & (input_V_V_empty_n == 1'b0));
+end
+
+always @ (*) begin
+    ap_rst_n_inv = ~ap_rst_n;
 end
 
 assign exitcond1_fu_185_p2 = ((hout_reg_101 == 5'd21) ? 1'b1 : 1'b0);
