@@ -7,11 +7,11 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="line_buffer_mp_1,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=8.258000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=16,HLS_SYN_DSP=0,HLS_SYN_FF=336,HLS_SYN_LUT=954}" *)
+(* CORE_GENERATION_INFO="line_buffer_mp_1,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xczu9eg-ffvb1156-2-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.555000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=16,HLS_SYN_DSP=0,HLS_SYN_FF=336,HLS_SYN_LUT=965}" *)
 
 module line_buffer_mp_1 (
         ap_clk,
-        ap_rst_n,
+        ap_rst,
         input_V_V_dout,
         input_V_V_empty_n,
         input_V_V_read,
@@ -31,7 +31,7 @@ parameter    ap_ST_fsm_pp1_stage0 = 9'd128;
 parameter    ap_ST_fsm_state11 = 9'd256;
 
 input   ap_clk;
-input   ap_rst_n;
+input   ap_rst;
 input  [15:0] input_V_V_dout;
 input   input_V_V_empty_n;
 output   input_V_V_read;
@@ -42,7 +42,6 @@ output   output_V_V_write;
 reg input_V_V_read;
 reg output_V_V_write;
 
-reg    ap_rst_n_inv;
 reg    input_V_V_blk_n;
 (* fsm_encoding = "none" *) reg   [8:0] ap_CS_fsm;
 wire    ap_CS_fsm_pp0_stage0;
@@ -197,7 +196,7 @@ reg    ap_idle_pp0;
 wire    ap_enable_pp0;
 reg    ap_idle_pp1;
 wire    ap_enable_pp1;
-reg    ap_condition_124;
+reg    ap_condition_122;
 
 // power-on initialization
 initial begin
@@ -214,7 +213,7 @@ line_buffer_mp_1_bkb #(
     .AddressWidth( 13 ))
 buffer_val_0_V_U(
     .clk(ap_clk),
-    .reset(ap_rst_n_inv),
+    .reset(ap_rst),
     .address0(buffer_val_0_V_address0),
     .ce0(buffer_val_0_V_ce0),
     .we0(buffer_val_0_V_we0),
@@ -228,7 +227,7 @@ line_buffer_mp_1_cud #(
     .AddressWidth( 13 ))
 buffer_val_1_V_U(
     .clk(ap_clk),
-    .reset(ap_rst_n_inv),
+    .reset(ap_rst),
     .address0(buffer_val_1_V_address0),
     .ce0(buffer_val_1_V_ce0),
     .q0(buffer_val_1_V_q0),
@@ -239,7 +238,7 @@ buffer_val_1_V_U(
 );
 
 always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
+    if (ap_rst == 1'b1) begin
         ap_CS_fsm <= ap_ST_fsm_state1;
     end else begin
         ap_CS_fsm <= ap_NS_fsm;
@@ -247,7 +246,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
+    if (ap_rst == 1'b1) begin
         ap_enable_reg_pp0_iter0 <= 1'b0;
     end else begin
         if (((1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_subdone) & (exitcond3_fu_659_p2 == 1'd1))) begin
@@ -259,7 +258,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
+    if (ap_rst == 1'b1) begin
         ap_enable_reg_pp0_iter1 <= 1'b0;
     end else begin
         if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
@@ -271,7 +270,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
+    if (ap_rst == 1'b1) begin
         ap_enable_reg_pp1_iter0 <= 1'b0;
     end else begin
         if (((1'b0 == ap_block_pp1_stage0_subdone) & (1'b1 == ap_CS_fsm_pp1_stage0) & (exitcond_flatten2_fu_816_p2 == 1'd1))) begin
@@ -283,7 +282,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
+    if (ap_rst == 1'b1) begin
         ap_enable_reg_pp1_iter1 <= 1'b0;
     end else begin
         if ((1'b0 == ap_block_pp1_stage0_subdone)) begin
@@ -295,7 +294,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_condition_124)) begin
+    if ((1'b1 == ap_condition_122)) begin
         if ((out_of_bounds_reg_896 == 1'd1)) begin
             ap_phi_reg_pp0_iter1_tmp_15_reg_324 <= 16'd0;
         end else if ((out_of_bounds_reg_896 == 1'd0)) begin
@@ -824,7 +823,7 @@ assign ap_block_state6_pp0_stage0_iter1 = ~(1'b1 == 1'b1);
 assign ap_block_state9_pp1_stage0_iter0 = ~(1'b1 == 1'b1);
 
 always @ (*) begin
-    ap_condition_124 = ((ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001));
+    ap_condition_122 = ((ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001));
 end
 
 assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
@@ -832,10 +831,6 @@ assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
 assign ap_enable_pp1 = (ap_idle_pp1 ^ 1'b1);
 
 assign ap_phi_reg_pp0_iter0_tmp_15_reg_324 = 'bx;
-
-always @ (*) begin
-    ap_rst_n_inv = ~ap_rst_n;
-end
 
 assign col_assign_fu_755_p2 = (tmp_7_reg_887 + tmp_28_cast_fu_751_p1);
 

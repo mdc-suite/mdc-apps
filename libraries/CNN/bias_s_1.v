@@ -7,11 +7,11 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="bias_s_1,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=5.956000,HLS_SYN_LAT=557313,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=47,HLS_SYN_LUT=151}" *)
+(* CORE_GENERATION_INFO="bias_s_1,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xczu9eg-ffvb1156-2-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.515000,HLS_SYN_LAT=557313,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=47,HLS_SYN_LUT=151}" *)
 
 module bias_s_1 (
         ap_clk,
-        ap_rst_n,
+        ap_rst,
         output_V_V_din,
         output_V_V_full_n,
         output_V_V_write,
@@ -27,7 +27,7 @@ parameter    ap_ST_fsm_state4 = 5'd8;
 parameter    ap_ST_fsm_state5 = 5'd16;
 
 input   ap_clk;
-input   ap_rst_n;
+input   ap_rst;
 output  [7:0] output_V_V_din;
 input   output_V_V_full_n;
 output   output_V_V_write;
@@ -38,7 +38,6 @@ input  [7:0] bias_V_q0;
 reg output_V_V_write;
 reg bias_V_ce0;
 
-reg    ap_rst_n_inv;
 reg    output_V_V_blk_n;
 (* fsm_encoding = "none" *) reg   [4:0] ap_CS_fsm;
 wire    ap_CS_fsm_state5;
@@ -67,7 +66,7 @@ initial begin
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
+    if (ap_rst == 1'b1) begin
         ap_CS_fsm <= ap_ST_fsm_state1;
     end else begin
         ap_CS_fsm <= ap_NS_fsm;
@@ -188,10 +187,6 @@ assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
 assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
 
 assign ap_CS_fsm_state5 = ap_CS_fsm[32'd4];
-
-always @ (*) begin
-    ap_rst_n_inv = ~ap_rst_n;
-end
 
 assign bias_V_address0 = tmp_fu_137_p1;
 

@@ -7,11 +7,11 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="concat_1,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.268000,HLS_SYN_LAT=544897,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=61,HLS_SYN_LUT=417}" *)
+(* CORE_GENERATION_INFO="concat_1,hls_ip_2017_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=1,HLS_INPUT_PART=xczu9eg-ffvb1156-2-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=3.676000,HLS_SYN_LAT=544897,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=61,HLS_SYN_LUT=426}" *)
 
 module concat_1 (
         ap_clk,
-        ap_rst_n,
+        ap_rst,
         input_0_V_V_dout,
         input_0_V_V_empty_n,
         input_0_V_V_read,
@@ -38,7 +38,7 @@ parameter    ap_ST_fsm_state6 = 7'd32;
 parameter    ap_ST_fsm_state7 = 7'd64;
 
 input   ap_clk;
-input   ap_rst_n;
+input   ap_rst;
 input  [15:0] input_0_V_V_dout;
 input   input_0_V_V_empty_n;
 output   input_0_V_V_read;
@@ -62,7 +62,6 @@ reg input_3_V_V_read;
 reg[15:0] output_V_V_din;
 reg output_V_V_write;
 
-reg    ap_rst_n_inv;
 reg    input_0_V_V_blk_n;
 (* fsm_encoding = "none" *) reg   [6:0] ap_CS_fsm;
 wire    ap_CS_fsm_state4;
@@ -117,7 +116,7 @@ initial begin
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
+    if (ap_rst == 1'b1) begin
         ap_CS_fsm <= ap_ST_fsm_state1;
     end else begin
         ap_CS_fsm <= ap_NS_fsm;
@@ -395,10 +394,6 @@ end
 
 always @ (*) begin
     ap_predicate_op78_write_state7 = ((tmp_3_reg_325 == 1'd1) & (exitcond_fu_292_p2 == 1'd0));
-end
-
-always @ (*) begin
-    ap_rst_n_inv = ~ap_rst_n;
 end
 
 assign exitcond1_fu_215_p2 = ((k_reg_149 == 7'd64) ? 1'b1 : 1'b0);

@@ -2,8 +2,8 @@
 `timescale 1 ns / 1 ps
 
   module conv_7_8_mul_mul_bkb_DSP48_0(a, b, p);
-input signed [8 - 1 : 0] a; // synthesis attribute keep a "true"
-input signed [16 - 1 : 0] b; // synthesis attribute keep b "true"
+input signed [16 - 1 : 0] a; // synthesis attribute keep a "true"
+input signed [8 - 1 : 0] b; // synthesis attribute keep b "true"
 output signed [24 - 1 : 0] p; // synthesis attribute keep p "true"
 
 assign p = $signed (a) * $signed (b);
