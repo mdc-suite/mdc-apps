@@ -5,7 +5,7 @@
 
 module bias_3(
 	input ap_clk,
-	input ap_rst_n,
+	input ap_rst,
 	
 	output  [`coeff_width-1 : 0] output_V_din,
 	input output_V_full_n,
@@ -18,7 +18,7 @@ wire [`coeff_width-1 : 0] bias_q;
 
 bias_s_3 bias_s_3(
         .ap_clk(ap_clk),
-        .ap_rst_n(ap_rst_n),
+        .ap_rst(ap_rst),
         .output_V_V_din(output_V_din),
         .output_V_V_full_n(output_V_full_n),
         .output_V_V_write(output_V_write),
