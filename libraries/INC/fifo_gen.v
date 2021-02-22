@@ -36,7 +36,7 @@ module fifo_gen #(
     input read,
     
 	input clk,
-    input ap_rst_n 
+    input ap_rst
 );
     wire wr_clk, rd_clk;
     
@@ -100,7 +100,7 @@ module fifo_gen #(
 // gestione dell indirizzo di lettura
     
    always@(posedge rd_clk)
-            if (!ap_rst_n)
+            if (ap_rst)
                 read_addr <= 0;
             else if(read && !empty)
                    read_addr <= read_addr+1; 
@@ -108,7 +108,7 @@ module fifo_gen #(
 //---------------------------------------------                     
 // gestione indirizzo di scrittura
        always@(posedge wr_clk)
-      if (!ap_rst_n)
+      if (ap_rst)
           write_addr <= 0;
       else if(write && !full)
            write_addr = write_addr+1; 
