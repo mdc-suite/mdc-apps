@@ -379,7 +379,11 @@
     <Instance id="bias_21_0">
         <Class name="actors.bias_21"/>
     </Instance>
-    <Connection dst="gen_in_0" dst-port="input_V_V" src="" src-port="in_port"/>
+    <Connection dst="gen_in_0" dst-port="input_V_V" src="" src-port="in_port">
+        <Attribute kind="Value" name="bufferSize">
+            <Expr kind="Literal" literal-kind="Integer" value="65536"/>
+        </Attribute>
+    </Connection>
     <Connection dst="line_buffer_0_0" dst-port="input_V_V" src="gen_in_0" src-port="output_0_V_V"/>
     <Connection dst="line_buffer_mp_0_0" dst-port="input_V_V" src="gen_in_0" src-port="output_1_V_V"/>
     <Connection dst="line_buffer_2_0" dst-port="input_V_V" src="gen_in_0" src-port="output_2_V_V"/>
