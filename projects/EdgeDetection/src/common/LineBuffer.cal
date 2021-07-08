@@ -1,0 +1,46 @@
+package common;
+
+actor LineBuffer()
+  uint(size=16) soi, uint(size=9) inY ==>
+  uint(size=9) line :
+
+  bool recvd := false;
+  uint(size=16) width;
+  uint(size=16) height;
+  uint(size=16) x := 0;
+  uint(size=16) y := 0;
+    
+  List(type:uint(size=9), size=1024) lineBuffer;
+  
+  revcSOI: action soi:[w,h] ==>
+  guard not recvd
+  do
+    //println("lb SOI " + w + "," + h);
+  	width := w+1;
+  	height := h+1;
+  	x := 0;
+  	y := 0;
+  	recvd := true;
+  end
+  
+  recvY: action inY:[inY] ==> line:[outY]
+  guard recvd 
+  var uint(size=9) outY
+  do
+  	outY := lineBuffer[x];
+  	lineBuffer[x]:= inY;
+
+  	if x = width then
+  		x := 0;
+  		if y = height then
+			y := 0;
+			recvd := false;
+		else
+			y := y+1;
+		end
+	else
+	  	x := x+1;
+	end
+  end
+
+end
