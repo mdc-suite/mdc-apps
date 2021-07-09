@@ -35,7 +35,7 @@ package body extfns is
                 q(0) := not r(17);
             end loop;
         
-        return q;
+        return q(7 downto 0);
     
     end sqrt_fctn;
 
